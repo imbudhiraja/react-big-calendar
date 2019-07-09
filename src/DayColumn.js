@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { findDOMNode } from 'react-dom'
 import cn from 'classnames'
+import moment from 'moment'
 
 import Selection, { getBoundsForNode, isEvent } from './Selection'
 import * as dates from './utils/dates'
@@ -166,7 +167,9 @@ class DayColumn extends React.Component {
           <div
             className="rbc-current-time-indicator"
             style={{ top: `${this.state.timeIndicatorPosition}%` }}
-          />
+          >
+            <span className='rbc-current-time'>{moment().format('hh:mm A')}</span>
+          </div>
         )}
       </div>
     )
